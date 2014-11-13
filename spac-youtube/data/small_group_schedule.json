@@ -1,0 +1,58 @@
+{
+    "monday": {
+        "day": "Monday",
+        "clazz": [
+            {
+                "name": "Body Blast",
+                "time": "6:00pm",
+                "instructor": "Michael",
+                "room": "7"
+            }
+        ]
+    },
+    "tuesday": {
+        "day": "Tuesday",
+        "clazz": []
+    },
+    "wednesday": {
+        "day": "Wednesday",
+        "clazz": []
+    },
+    "thursday": {
+        "day": "Thursday",
+        "clazz": [
+            {
+                "name": "Kettlebell",
+                "time": "4:45pm",
+                "instructor": "Jill",
+                "room": "5B"
+            }
+        ]
+    },
+    "friday": {
+        "day": "Friday",
+        "clazz": [
+            {
+                "name": "Gold Theory",
+                "time": "7:30am",
+                "instructor": "Jill",
+                "room": "5"
+            }
+        ]
+    },
+    "saturday": {
+        "day": "Saturday",
+        "clazz": [
+            {
+                "name": "TRX",
+                "time": "9:00am",
+                "instructor": "Georgene",
+                "room": "5B"
+            }
+        ]
+    },
+    "sunday": {
+        "day": "Sunday",
+        "clazz": []
+    }
+}

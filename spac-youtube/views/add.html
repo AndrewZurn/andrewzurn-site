@@ -1,0 +1,32 @@
+<section class="class-schedule">
+    <div class="jumbotron">
+      <h1>SPAC YouTube Night</h1>
+    </div>
+    
+    <div class="main-text">
+        
+      <div class="form-group">
+		<div class="col-md-4" style="padding-bottom: 15px;">
+          <label for="inputVideoUrl" class="control-label"><h4>Add a Video</h4></label>
+		  <input class="form-control" id="inputVideoUrl" placeholder="YouTube URL" ng-model="formInfo.video">
+		</div>
+        <div class="col-md-3" style="padding-bottom: 15px;">
+          <h4>Category </h4>
+		  <select ng-model="formInfo.catId" style="height: 42px; width: 150px;">
+            <option value="1">Music</option>
+            <option value="2">Comedy</option>
+            <option value="3">Animals</option>
+            <option value="4">Kids</option>
+            <option value="5">Misc</option>
+          </select>
+		</div>
+		<div class="col-md-1">
+            <br/><br/>
+			<button type="submit" ng-click="addVideo()" class="btn btn-success" style="float: right;">Submit</button>
+		</div>
+  	  </div>
+
+        
+    </div>
+    
+</section>

@@ -1,0 +1,27 @@
+<section class="class-schedule">
+    <ul class="class-day-ul">
+        <li class="class-day-li" ng-repeat="day in week">
+            <strong class="strong-day-header">{{smallGroupSchedule[day].day}}</strong>
+                <table>
+                    <td></td><td></td>
+                    <td><strong>Name</strong></td>
+                    <td><strong>Time</strong></td>
+                    <td><strong>Instructor</strong></td>
+                    <td><strong>Room</strong></td>
+                    <td><input type="button" class="add-btn" ng-click="insertRow(day, smallGroupSchedule[day].clazz.length)" name="add row" value="Add Class"></input></td>
+                    <tr ng-repeat="class in smallGroupSchedule[day].clazz">
+                        <td><input type="button" class="direction-btn" ng-click="moveRow('up', day, $index)" name="move up" value="&#9650;"></td>
+                        <td><input type="button" class="direction-btn" ng-click="moveRow('down', day, $index)" name="move down" value="&#9660;"></td>
+                        <td><input type="text" ng-model="class.name" name="Class Name"/></td>
+                        <td><input type="text" ng-model="class.time" name="Class Time"/></td>
+                        <td><input type="text" ng-model="class.instructor" name="Class Instructor"/></td>
+                        <td><input type="text" ng-model="class.room" name="Class Room"/></td>
+                        <td><input type="button" class="delete-btn" ng-click="removeRow(day, $index)" name="remove row" value="Remove"></input></td>
+                    </tr>
+                </table><br/>
+        </li>
+    </ul>
+    
+    <input class="save-btn" type="button" ng-click="saveSchedule()" value="Save"/>
+    
+</section>

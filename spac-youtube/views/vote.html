@@ -1,0 +1,36 @@
+<section class="class-schedule">
+    <div class="jumbotron">
+      <h1>SPAC YouTube Night</h1>
+    </div>
+    
+    <div class="main-text text-center">
+        
+       <div ng-repeat="video in videos | filter:orderList">
+            <span ng-switch on="$index % 2">
+                <span ng-switch-when="0">
+                    <div class="row">
+                        <div class="col-md-5 jumbotron" ng-show="videos[$index+0]">
+                            <strong>{{videos[$index+0].videoName}}</strong><br/><br/>
+                            <img src="{{videos[$index+0].imageUrl}}" width="85%"/><br/>
+                            <strong>Category: </strong> {{videos[$index+0].category}}<br/>
+                            <strong>Current Vote: </strong> {{videos[$index+0].vote}}<br/>
+                            <button class="btn btn-primary" ng-click="vote(videos[$index+0].url)">Vote</button>&nbsp;&nbsp;
+                            <button class="btn btn-success" ng-click="play(videos[$index+0].url, videos[$index+0].wholeUrl)">Play</button>
+                        </div>
+                        
+                        <div class="col-md-5 col-md-offset-1 jumbotron" ng-show="videos[$index+1]">
+                            <strong>{{videos[$index+1].videoName}}</strong><br/><br/>
+                            <img src="{{videos[$index+1].imageUrl}}" width="85%"/><br/>
+                            <strong>Category: </strong> {{videos[$index+1].category}}<br/>
+                            <strong>Current Vote: </strong> {{videos[$index+1].vote}}<br/>
+                            <button class="btn btn-primary" ng-click="vote(videos[$index+1].url)">Vote</button>&nbsp;&nbsp;
+                            <button class="btn btn-success" ng-click="play(videos[$index+1].url, videos[$index+1].wholeUrl)">Play</button>
+                        </div>
+                    </div>
+                </span>
+            </span><br/>
+        </div>
+        
+    </div>
+    
+</section>

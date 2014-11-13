@@ -1,0 +1,67 @@
+#work-div {
+    color: #fff;   
+}
+
+.about-section {
+    width: 100%;
+    padding: 60px 0 30px;
+    color: #fff;
+    background-color: #CF4141;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#about .container {
+    padding-top: 40px;
+}
+
+.contact-section {
+    width: 100%;
+    padding: 60px 0;
+    color: #fff;
+    background: url(../img/hipaa_download.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#contact .container{
+    padding-top: 40px;
+}
+
+.footer-section {
+    width: 100%;
+    padding: 40px 0 0 0;
+    color: #fff;
+    background-color: #333333;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#footer .container {
+    padding: 0 0 12px 0;
+}
+
+footer {
+    width: 100%;
+    margin: 20px 0 0 0;
+}
+
+.small-text {
+    font-size: 12px;
+    margin: 0 0 0 0;
+    padding: 0 0 5 0;
+}
+
+.footer-h5 {
+    margin-bottom: 2px; 
+}
+
+#feedContainer h6{
+    margin: 0 0 6px 0;
+}

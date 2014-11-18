@@ -1,5 +1,40 @@
-#work-div {
-    color: #fff;   
+img {
+  /* Responsive images (ensure images don't scale beyond their parents) */
+
+  /* Part 1: Set a maxium relative to the parent */
+  max-width: 100%;
+
+  /* IE7-8 need help adjusting responsive images */
+  width: auto\9;
+
+  /* Part 2: Scale the height according to the width, otherwise you get stretching */
+  height: auto;
+
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+.intro {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background: url(../img/milkyway.jpg) no-repeat center center fixed; 
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@media(min-width:767px) {
+    .intro {
+        height: 100%;
+        padding: 0;
+    }
 }
 
 .about-section {
@@ -15,6 +50,43 @@
 
 #about .container {
     padding-top: 40px;
+}
+
+.work-section {
+    width: 100%;
+    padding: 50px 0;
+    color: #fff;
+    background: url(../img/navy_blue_background.jpg) no-repeat center center scroll; 
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#work-div {
+    color: #fff;   
+}
+
+.downloads-section {
+    width: 100%;
+    padding: 50px 0;
+    color: #fff;
+    background: url(../img/keyboard.jpg) no-repeat center center fixed; 
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.extra-padding-bottom {
+    padding-bottom: 5px;
+}
+@media(max-width:767px) {
+    .extra-padding-bottom {
+        padding-bottom: 20px;
+    }
 }
 
 .contact-section {

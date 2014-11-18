@@ -20,6 +20,11 @@ $(document).ready(function() {
             feedContainer.innerHTML = "Unable to fetch feed from " + feedUrl;
         }
     });
+
+    $('.nav a').on('click', function(){
+        $(".btn-navbar").click(); //bootstrap 2.x
+        $(".navbar-toggle").click() //bootstrap 3.x by Richard
+    });
 });
 
 //jQuery to collapse the navbar on scroll

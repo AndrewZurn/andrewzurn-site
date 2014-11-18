@@ -39,7 +39,7 @@ img {
 
 .about-section {
     width: 100%;
-    padding: 60px 0 30px;
+    padding: 25px 0 30px;
     color: #fff;
     background-color: #CF4141;
     -webkit-background-size: cover;
@@ -54,7 +54,7 @@ img {
 
 .work-section {
     width: 100%;
-    padding: 50px 0;
+    padding: 60px 0 30px;
     color: #fff;
     background: url(../img/navy_blue_background.jpg) no-repeat center center scroll; 
     background-color: #000;
@@ -91,7 +91,7 @@ img {
 
 .contact-section {
     width: 100%;
-    padding: 60px 0;
+    padding: 25px 0;
     color: #fff;
     background: url(../img/hipaa_download.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
@@ -117,6 +117,13 @@ img {
 
 #footer .container {
     padding: 0 0 12px 0;
+}
+
+@media(max-width: 767px) {
+    .footer-column {
+        margin-right: 10px;
+        margin-left: 10px;
+    }   
 }
 
 footer {

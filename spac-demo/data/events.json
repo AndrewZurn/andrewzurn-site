@@ -1,1 +1,18 @@
-{"events":[{"name":"Remote Control Car Racing","date":"November 11 - 5:30pm","location":"SPAC","description":"Charge your battery, head this way! Race by to Member Night!","contact":"kmontpetit@theSPAC.com"},{"name":"Scavenger Hunt","date":"November 20 - 5:30pm","location":"SPAC","description":"Follow the clues... to Member Night!","contact":"kmontpetit@theSPAC.com"},{"name":"Game Night","date":"December 4 - 5:30pm","location":"SPAC","description":"Have games you want to play? Bring them with you! Don't have a game? Come by anyway and play with us!","contact":"kmontpetit@theSPAC.com"},{"name":"Mixologist Night","date":"December 11 - 5:30pm","location":"SPAC","description":"Mix up your Thursday Night with a drink and some mingling!","contact":"kmontpetit@theSPAC.com"}]}
+{
+    "events": [
+        {
+            "name": "Holiday Movie Night",
+            "date": "December 4 - 7:00pm",
+            "location": "SPAC",
+            "description": "Join us and TCFF in watching the Holiday movie, Elf! Also, bring donatable food for the St. Louis Park Food Shelf.",
+            "contact": "kmontpetit@theSPAC.com"
+        },
+        {
+ 			"name": "Holiday Sing-A-Long & Ugly Sweater Contest",
+            "date": "December 18 - 5:30pm",
+            "location": "SPAC Hotel Lobby",
+            "description": "Wear your best ugly sweater and bring your singing voice to the SPAC Holiday Sing-A-Long.",
+            "contact": "kmontpetit@thespac.com"
+        }
+    ]
+}

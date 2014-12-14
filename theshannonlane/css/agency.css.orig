@@ -179,6 +179,7 @@ fieldset[disabled] .btn-xl.active {
     color: #FFF4CB;
 }
 
+
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
@@ -271,13 +272,22 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    
 }
 
 header .intro-text {
+<<<<<<< HEAD
+    margin-top: 10px;
+    text-align: left;
+}
+=======
     padding-top: 100px;
     padding-bottom: 50px; 
     text-align: left;
+    
 }
+
+>>>>>>> ea6425bdeb6da92d758fdf84566333696e66e75a
 
 header .intro-text .intro-lead-in {
     text-transform: uppercase;

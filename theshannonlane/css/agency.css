@@ -179,11 +179,12 @@ fieldset[disabled] .btn-xl.active {
     color: #FFF4CB;
 }
 
+
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-    color: #666666;
+    color: #FFF4CB;
 }
 
 .navbar-default .navbar-collapse {
@@ -271,17 +272,16 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    
 }
 
 header .intro-text {
     padding-top: 100px;
-    padding-bottom: 500px;
+    padding-bottom: 50px; 
     text-align: left;
     
 }
 
-header .container .intro-name {
-}
 
 header .intro-text .intro-lead-in {
     text-transform: uppercase;
@@ -298,12 +298,23 @@ header .intro-text .intro-heading {
     font-size: 50px;
     line-height: 50px;
 }
+ 
+header .intro-text .intro-description {
+    text-transform: uppercase;
+    font-family: "Lato","Helvetica Neue",Liberation Sans,sans-serif;
+    color: #fff;
+    font-size: 25px;
+    line-height: 25px;
+ }
 
+header .intro-name{
+    margin-bottom: 10px;
+}
 
 @media(min-width:768px) {
     header .intro-text {
         padding-top: 300px;
-        padding-bottom: 200px;
+        padding-bottom: 200px; 
         text-align: left;
 
     }
@@ -322,6 +333,14 @@ header .intro-text .intro-heading {
         color: #21B6A8;
         font-size: 50px;
         line-height: 50px;
+    }
+    
+     header .intro-text .intro-description {
+        text-transform: uppercase;
+        font-family: "Lato","Helvetica Neue",Liberation Sans,sans-serif;
+        color: #fff;
+        font-size: 25px;
+        line-height: 25px;
     }
 }
 

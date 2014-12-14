@@ -16,6 +16,7 @@ var cbpAnimatedHeader = (function() {
 		changeHeaderOn = 300;
 
 	function init() {
+		$('#nav-name').addClass('name-hide');
 		window.addEventListener( 'scroll', function( event ) {
 			if( !didScroll ) {
 				didScroll = true;
@@ -28,9 +29,13 @@ var cbpAnimatedHeader = (function() {
 		var sy = scrollY();
 		if ( sy >= changeHeaderOn ) {
 			classie.add( header, 'navbar-shrink' );
+			$('#nav-name').removeClass('name-hide');
+			$('#nav-name').addClass('name-show');
 		}
 		else {
 			classie.remove( header, 'navbar-shrink' );
+			$('#nav-name').addClass('name-hide');
+			$('#nav-name').removeClass('name-show');
 		}
 		didScroll = false;
 	}

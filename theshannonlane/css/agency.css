@@ -274,13 +274,8 @@ header {
 }
 
 header .intro-text {
-    padding-top: 100px;
-    padding-bottom: 500px;
+    margin-top: 10px;
     text-align: left;
-    
-}
-
-header .container .intro-name {
 }
 
 header .intro-text .intro-lead-in {

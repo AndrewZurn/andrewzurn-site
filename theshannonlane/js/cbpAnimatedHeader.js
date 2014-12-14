@@ -16,7 +16,6 @@ var cbpAnimatedHeader = (function() {
 		changeHeaderOn = 300;
 
 	function init() {
-		$('#nav-name').addClass('name-hide');
 		window.addEventListener( 'scroll', function( event ) {
 			if( !didScroll ) {
 				didScroll = true;

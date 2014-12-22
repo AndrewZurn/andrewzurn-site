@@ -49,7 +49,7 @@
 }
 
 /* CSS for the Carousel of the Portfolio area of the site */
-#wrapper_bu {
+.wrapper_bu {
   position: relative;
   width: 100%;
   height: 400px;
@@ -61,6 +61,11 @@
 .txt_h1 { font-size: 2em }
  
 .holder_bu { cursor: pointer }
+.holder_bu2 { cursor: pointer }
+.holder_bu3 { cursor: pointer }
+.holder_bu4 { cursor: pointer }
+.holder_bu5 { cursor: pointer }
+.holder_bu6 { cursor: pointer }
  
 .holder_bu_awayL1 {
   position: absolute;

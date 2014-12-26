@@ -41,7 +41,7 @@ img {
     width: 100%;
     padding: 25px 0 30px;
     color: #fff;
-    background-color: #CF4141;
+    background: url(../img/gray_background.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;

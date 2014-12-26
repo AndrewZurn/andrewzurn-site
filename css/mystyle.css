@@ -119,7 +119,7 @@ img {
     padding: 0 0 12px 0;
 }
 
-@media(max-width: 767px) {
+@media(min-width: 767px) {
     .footer-column {
         margin-right: 17px;
         margin-left: 17px;

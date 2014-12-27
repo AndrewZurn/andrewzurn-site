@@ -1,12 +1,12 @@
 // Carosel 1
 var Conclave1=(function(){
     var buArr1 =[];
-		var buArr2 =[];
-	  var buArr3 =[];
-	  var buArr4 =[];
-	  var buArr5 =[];
-	  var buArr6 =[];
-		var arlen;
+    var buArr2 =[];
+    var buArr3 =[];
+    var buArr4 =[];
+    var buArr5 =[];
+    var buArr6 =[];
+    var arlen;
 	
     return {
       init:function(){
@@ -27,19 +27,19 @@ var Conclave1=(function(){
         $(".holder_bu").each(function(){
           buArr1.push($(this).attr('class'))
         });
-				$(".holder_bu2").each(function(){
+        $(".holder_bu2").each(function(){
           buArr2.push($(this).attr('class'))
         });
-				$(".holder_bu3").each(function(){
+		$(".holder_bu3").each(function(){
           buArr3.push($(this).attr('class'))
         });
-				$(".holder_bu4").each(function(){
+        $(".holder_bu4").each(function(){
           buArr4.push($(this).attr('class'))
         });
-				$(".holder_bu5").each(function(){
+		$(".holder_bu5").each(function(){
           buArr5.push($(this).attr('class'))
         });
-				$(".holder_bu6").each(function(){
+        $(".holder_bu6").each(function(){
           buArr6.push($(this).attr('class'))
         });
 				

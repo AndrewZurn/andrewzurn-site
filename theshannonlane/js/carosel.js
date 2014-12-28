@@ -14,21 +14,21 @@ var Conclave1=(function(){
       },
       addCN:function(){
         var buarr=["holder_bu_awayL2","holder_bu_awayL1","holder_bu_center","holder_bu_awayR1","holder_bu_awayR2"];
+        var buarr2=["holder_bu_awayL1","holder_bu_center","holder_bu_awayR1"];
         for(var i=1;i<=buarr.length;++i){
-          $("#bu"+i).removeClass().addClass(buarr[i-1]+" holder_bu");
-					$("#bu"+(i+5)).removeClass().addClass(buarr[i-1]+" holder_bu2");
-					$("#bu"+(i+10)).removeClass().addClass(buarr[i-1]+" holder_bu3");
-					$("#bu"+(i+15)).removeClass().addClass(buarr[i-1]+" holder_bu4");
-					$("#bu"+(i+20)).removeClass().addClass(buarr[i-1]+" holder_bu5");
-					$("#bu"+(i+25)).removeClass().addClass(buarr[i-1]+" holder_bu6");
+            $("#bu"+i).removeClass().addClass(buarr[i-1]+" holder_bu");
+            $("#bu"+(i+11)).removeClass().addClass(buarr[i-1]+" holder_bu5");
+            $("#bu"+(i+16)).removeClass().addClass(buarr[i-1]+" holder_bu6");
+        }
+          
+        for(var i=1;i<=buarr2.length;++i){
+            $("#bu"+(i+5)).removeClass().addClass(buarr2[i-1]+" holder_bu3");
+            $("#bu"+(i+8)).removeClass().addClass(buarr2[i-1]+" holder_bu4");   
         }
       },
       clickReg:function(){
         $(".holder_bu").each(function(){
           buArr1.push($(this).attr('class'))
-        });
-        $(".holder_bu2").each(function(){
-          buArr2.push($(this).attr('class'))
         });
 		$(".holder_bu3").each(function(){
           buArr3.push($(this).attr('class'))
@@ -46,12 +46,15 @@ var Conclave1=(function(){
         arlen=buArr1.length;
         for(var i=0;i<arlen;++i){
           buArr1[i]=buArr1[i].replace(" holder_bu","")
-					buArr2[i]=buArr2[i].replace(" holder_bu2","")
-					buArr3[i]=buArr3[i].replace(" holder_bu3","")
-					buArr4[i]=buArr4[i].replace(" holder_bu4","")
-					buArr5[i]=buArr5[i].replace(" holder_bu5","")
-					buArr6[i]=buArr6[i].replace(" holder_bu6","")
+          buArr5[i]=buArr5[i].replace(" holder_bu5","")
+          buArr6[i]=buArr6[i].replace(" holder_bu6","")
         };
+        
+        arlen2=buArr3.length;
+        for(var i=0;i<arlen2;++i){
+          buArr3[i]=buArr3[i].replace(" holder_bu3","")
+          buArr4[i]=buArr4[i].replace(" holder_bu4","")   
+        }
 				
 				// Carosel 1
         $(".holder_bu").click(function(buid){
@@ -73,40 +76,20 @@ var Conclave1=(function(){
           }
         });
 				
-				// Carosel 2
-				$(".holder_bu2").click(function(buid){
-          var me=this,id=this.id||buid,joId=$("#"+id),joCN=joId.attr("class").replace(" holder_bu2","");
-          var cpos=buArr2.indexOf(joCN),mpos=buArr2.indexOf("holder_bu_center");
-					
-          if(cpos!=mpos){
-              tomove=cpos>mpos?arlen-cpos+mpos:mpos-cpos;
-						
-              while(tomove){
-                var t=buArr2.shift();
-                buArr2.push(t);
-								
-                for(var i=1;i<=arlen;++i){
-                  $("#bu"+(i+5)).removeClass().addClass(buArr2[i-1]+" holder_bu2");
-                }
-                --tomove;
-              }
-          }
-        });
-				
 				// Carosel 3
 				$(".holder_bu3").click(function(buid){
           var me=this,id=this.id||buid,joId=$("#"+id),joCN=joId.attr("class").replace(" holder_bu3","");
           var cpos=buArr3.indexOf(joCN),mpos=buArr3.indexOf("holder_bu_center");
 					
           if(cpos!=mpos){
-              tomove=cpos>mpos?arlen-cpos+mpos:mpos-cpos;
+              tomove=cpos>mpos?arlen2-cpos+mpos:mpos-cpos;
 						
               while(tomove){
                 var t=buArr3.shift();
                 buArr3.push(t);
 								
-                for(var i=1;i<=arlen;++i){
-                  $("#bu"+(i+10)).removeClass().addClass(buArr3[i-1]+" holder_bu3");
+                for(var i=1;i<=arlen2;++i){
+                  $("#bu"+(i+5)).removeClass().addClass(buArr3[i-1]+" holder_bu3");
                 }
                 --tomove;
               }
@@ -119,14 +102,14 @@ var Conclave1=(function(){
           var cpos=buArr4.indexOf(joCN),mpos=buArr4.indexOf("holder_bu_center");
 					
           if(cpos!=mpos){
-              tomove=cpos>mpos?arlen-cpos+mpos:mpos-cpos;
+              tomove=cpos>mpos?arlen2-cpos+mpos:mpos-cpos;
 						
               while(tomove){
                 var t=buArr4.shift();
                 buArr4.push(t);
 								
-                for(var i=1;i<=arlen;++i){
-                  $("#bu"+(i+15)).removeClass().addClass(buArr4[i-1]+" holder_bu4");
+                for(var i=1;i<=arlen2;++i){
+                  $("#bu"+(i+8)).removeClass().addClass(buArr4[i-1]+" holder_bu4");
                 }
                 --tomove;
               }
@@ -146,7 +129,7 @@ var Conclave1=(function(){
                 buArr5.push(t);
 								
                 for(var i=1;i<=arlen;++i){
-                  $("#bu"+(i+20)).removeClass().addClass(buArr5[i-1]+" holder_bu5");
+                  $("#bu"+(i+11)).removeClass().addClass(buArr5[i-1]+" holder_bu5");
                 }
                 --tomove;
               }
@@ -166,7 +149,7 @@ var Conclave1=(function(){
                 buArr6.push(t);
 								
                 for(var i=1;i<=arlen;++i){
-                  $("#bu"+(i+25)).removeClass().addClass(buArr6[i-1]+" holder_bu6");
+                  $("#bu"+(i+16)).removeClass().addClass(buArr6[i-1]+" holder_bu6");
                 }
                 --tomove;
               }
@@ -175,13 +158,13 @@ var Conclave1=(function(){
       },
       auto:function(){
         for(i=1;i<=1;++i){
-          $(".holder_bu").delay(4000).trigger('click',"bu"+i).delay(4000);
-					$(".holder_bu2").delay(4000).trigger('click',"bu"+i).delay(4000);
-					$(".holder_bu3").delay(4000).trigger('click',"bu"+i).delay(4000);
-					$(".holder_bu4").delay(4000).trigger('click',"bu"+i).delay(4000);
-					$(".holder_bu5").delay(4000).trigger('click',"bu"+i).delay(4000);
-					$(".holder_bu6").delay(4000).trigger('click',"bu"+i).delay(4000);
-          console.log("called");
+            $(".holder_bu").delay(4000).trigger('click',"bu"+i).delay(4000);
+            $(".holder_bu2").delay(4000).trigger('click',"bu"+i).delay(4000);
+            $(".holder_bu3").delay(4000).trigger('click',"bu"+i).delay(4000);
+            $(".holder_bu4").delay(4000).trigger('click',"bu"+i).delay(4000);
+            $(".holder_bu5").delay(4000).trigger('click',"bu"+i).delay(4000);
+            $(".holder_bu6").delay(4000).trigger('click',"bu"+i).delay(4000);
+            console.log("called");
         }
       }
     };

@@ -52,7 +52,8 @@
 .wrapper_bu {
   position: relative;
   width: 100%;
-  height: 550px;
+  height: 400px;
+
 }
  
 .txt_Center { margin: 50% 0% 0% 20% }   
@@ -68,10 +69,10 @@
  
 .holder_bu_awayL1 {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 10%;
   width: 35%;
-  height: 40%;
+  height: 55%;
   background: rgba(255,244,203,.9);
     border-radius: 5px;
     z-index: 2;
@@ -84,10 +85,10 @@
  
 .holder_bu_awayL2 {
   position: absolute;
-  top: 35%;
+  top: 25%;
   left: 3%;
   width: 20%;
-  height: 30%;
+  height: 40%;
   background: rgba(33,182,168,.7);
     border-radius: 5px;
     z-index: 1;
@@ -100,10 +101,10 @@
  
 .holder_bu_center {
   position: absolute;
-  top: 10%;
+  top: 0%;
   left: 20%;
   width: 60%;
-  height: 70%;
+  height: 90%;
     border-radius: 5px;
     background: rgba(33,182,168,1);
     z-index: 3;
@@ -116,10 +117,10 @@
  
 .holder_bu_awayR1 {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 55%;
   width: 35%;
-  height: 40%;
+  height: 55%;
   background: rgba(255,244,203,.9);
     border-radius: 5px;
     z-index: 2;
@@ -132,10 +133,10 @@
  
 .holder_bu_awayR2 {
   position: absolute;
-  top: 35%;
+  top: 25%;
   left: 77%;
   width: 20%;
-  height: 30%;
+  height: 40%;
  background: rgba(33,182,168,.7);
     border-radius: 5px;
     z-index: 1;
@@ -152,17 +153,29 @@
 
 
 .holder_bu_awayR2 img{
+     display: inline-block;
     margin-top: 2px;
+    max-height: 97%;
+    max-width: 97%;
 }
 
 .holder_bu_awayL2 img{
+     display: inline-block;
     margin-top: 2px;
-}
-
-.wrapper_bu img {
-    display: inline-block;
     max-height: 97%;
     max-width: 97%;
+}
+
+.holder_bu_awayL1  img {
+    display: inline-block;
+    max-height: 77%;
+    max-width: 77%;
+}
+
+.holder_bu_awayR1  img {
+    display: inline-block;
+    max-height: 77%;
+    max-width: 77%;
 }
 
 .carosel-full-img {
@@ -180,9 +193,15 @@
     height: 75%;
 }
 .holder_bu_center img{
-    margin-top: 47px;
+    display: inline-block;
+    margin-top: 40px;
+    max-height: 77%;
+    max-width: 77%;
      -ms-transform: scale(1.25,1.25); /* IE 9 */
     -webkit-transform: scale(1.25,1.25); /* Chrome, Safari, Opera */
     transform: scale(1.25,1.25);
 }
 
+.portfolio-modal br {
+   line-height: 300%;
+}

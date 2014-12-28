@@ -80,12 +80,24 @@ img {
     background-size: cover;
 }
 
+@media(max-width: 767px) {
+    .downloads-section h3 {
+        margin-top: 19px;
+    }
+}
+
 .extra-padding-bottom {
     padding-bottom: 5px;
 }
+
 @media(max-width:767px) {
     .extra-padding-bottom {
         padding-bottom: 20px;
+    }
+	
+	  .footer-column {
+        margin-right: 17px;
+        margin-left: 17px;
     }
 }
 
@@ -117,18 +129,6 @@ img {
 
 #footer .container {
     padding: 0 0 12px 0;
-}
-
-@media(min-width: 767px) {
-    .footer-column {
-        margin-right: 17px;
-        margin-left: 17px;
-    }
-
-    .downloads-section h3 {
-        margin-top: 10px;
-        margin-bottom: 15px;
-    }
 }
 
 footer {

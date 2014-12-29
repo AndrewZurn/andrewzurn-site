@@ -168,14 +168,14 @@
 
 .holder_bu_awayL1  img {
     display: inline-block;
-    max-height: 77%;
-    max-width: 77%;
+    max-height: 97%;
+    max-width: 97%;
 }
 
 .holder_bu_awayR1  img {
     display: inline-block;
-    max-height: 77%;
-    max-width: 77%;
+    max-height: 97%;
+    max-width: 97%;
 }
 
 .carosel-full-img {
@@ -204,4 +204,50 @@
 
 .portfolio-modal br {
    line-height: 300%;
+}
+
+.contact-image {
+    z-index: 100;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    margin-left: 0;
+    border: 7px solid #f1f1f1;
+    border-radius: 100%;
+    color: #FFF4CB;
+    background-color: #666666;
+}
+
+.contact-icon {
+    padding-bottom: 100px;
+}
+
+@media(max-width:768px) {
+    .contact-icon {
+        text-align: center;   
+        margin-left: -75px;
+    }
+    .wrapper_bu {
+        display: none;
+    }
+}
+
+@media(min-width:768px) {
+    .contact-image {
+        width: 120px;
+        height: 120px;
+    }
+    .wrapper_bu {
+        display: block;
+    }
+}
+
+@media(min-width:992px) {
+    .contact-image {
+        width: 150px;
+        height: 150px;
+    }
+    .wrapper_bu {
+        display: block;
+    }
 }

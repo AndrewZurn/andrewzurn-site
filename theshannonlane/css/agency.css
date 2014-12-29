@@ -373,6 +373,7 @@ section h3.section-subheading {
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
+    
 }
 
 #portfolio .portfolio-item .portfolio-link {
@@ -673,7 +674,7 @@ aside.clients img {
 
 section#contact {
     background-color: #222;
-    background-image: url(../img/map-image.png);
+    background-image: url(../img/contact/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
 }

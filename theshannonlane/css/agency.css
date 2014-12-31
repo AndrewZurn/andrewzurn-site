@@ -674,7 +674,7 @@ aside.clients img {
 
 section#contact {
     background-color: #222;
-    background-image: url(../img/contact/background.jpg);
+    background-image: url(../img/contact/background.jpg)x;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -806,8 +806,9 @@ ul.social-buttons li a:active {
 }
 
 .portfolio-modal .modal-content p {
-    margin-bottom: 30px;
+    text-align: center;
 }
+
 
 .portfolio-modal .modal-content p.item-intro {
     margin: 20px 0 30px;

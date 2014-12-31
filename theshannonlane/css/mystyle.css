@@ -251,3 +251,27 @@
         display: block;
     }
 }
+
+.portfolio-modal ul{
+    text-align: left;
+    line-height: 1.5;
+}
+
+.portfolio-modal .modal-content .paragraph img{
+    border: 1.5px solid #666666;
+    margin-bottom: 0px;
+    
+    
+}
+
+.portfolio-modal .paragraph .row p {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 0;
+ 
+}
+.portfolio-modal .paragraph p {
+    text-align: left;
+    line-height: 1.5;
+}
+

@@ -674,7 +674,7 @@ aside.clients img {
 
 section#contact {
     background-color: #222;
-    background-image: url(../img/contact/background.jpg)x;
+    background-image: url(../img/contact/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
 }

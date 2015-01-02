@@ -303,3 +303,7 @@
 .table-with-border {
     border: 1.5px solid #666666;
 }
+
+section#contact h3 {
+  color: white;
+}

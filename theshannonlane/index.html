@@ -343,17 +343,17 @@
                               <div id="bu4"> <img class="carosel-full-img" src="img/portfolio/spacWeb.png" /> </div>
                               <div id="bu5"> <img src="img/portfolio/spacClose.png" /> </div>
                             </div>
-<div class="paragraph">                            
+<div class="container paragraph">                          
 <p><strong>PROBLEM: </strong> An efficient and functionable solition for the members of Saint Paul Athletic Club to easily obtain class schedules and social events.
 <br>
 <strong>STEPS TO SOLUTION: </strong> I started tackling this problem through conversations.  I talked to the managment at the club and members to get their idea of what a succefull app would look like.  From there I put their's and my ideas to paper.  </p>
    <div class="row">
        <div class="col-lg-6 ">
-            <p> MOBILE DESIGN</p>
+            <h2> MOBILE DESIGN</h2>
              <img src="img/portfolio/mobileDesign.jpg"/>      
         </div>
        <div class="col-lg-6">
-           <p> WEB DESIGN</p>
+           <h2> WEB DESIGN</h2>
            <img src="img/portfolio/websiteDesign.jpg"/>     
        </div>
     </div>
@@ -364,7 +364,7 @@
     <ul>
         <li><i>Efficienty</i> - It was clear to be able to achieve the goal the schedules would need to update without forcing the user to manually update from the app store.  Thus, the app dynmically refreshes with external data that is easily updated by the club. </li>
         <li><i>Consistancy</i> - It was important to maintain the same feel as the club's current website.  To do this, their fonts, color schemes, and images were implemented in the mobile app. </li>
-        <li><i>Minilistic</i> - A main purpose of this app was to reduce users fustrations with viewing the current class schedules and social events through the mobile website.  Thus, it was important for the look to be simlistic but functionable.</li>
+        <li><i>Minimalistic</i> - A main purpose of this app was to reduce users fustrations with viewing the current class schedules and social events through the mobile website.  Thus, it was important for the look to be simlistic but functionable.</li>
         <li><i>Flexiablity</i> - This app was tailored to any aged user.  One being the bottom buttons can be touch or swipe left/right on the pages will both cause the same functionality of navigating between the three main pages.  The other feature is closing the information boxes for class schedule times.  A user can click on classes or events to get more information.  At this point a popup box appears on their screen, and to exit the screen, a user can click a Close button at the bottom of the page, or can simply click the background outside of the popup box.  </li>
         </ul>
     </div>
@@ -400,13 +400,51 @@
                             <div class="wrapper_bu">
                                 <img src="img/portfolio/investMain.png" />
                             </div>
-                            
-<p>This is an internal web application for Securian Fincial Group.  For complance reasons, I do not feel comfortable sharing images on my personal website.
+ 
+<div class="container paragraph"> 
+    <p><strong>WEB: </strong>Invest Systems Web is the internal web app I support for Securian Fincial Group and work on a new release once a quarter.  For complance reasons, I do not feel comfortable sharing images on my personal website.</p>
+      <div class="container paragraph table-with-border">
+           <div class="row gray-row">
+               <div class="col-xs-6 ">
+                   <p> PROBLEM</p>  
+               </div>
+               <div class="col-xs-6">
+                   <p> SOLUTION</p> 
+               </div>
+            </div>
+               <div class="row vertical-align">
+               <div class="col-xs-6 ">
+                   <p> Informing the user files are importing through the webpage.</p>  
+               </div>
+               <div class="col-xs-6">
+                   <p> Created a JavaScript to display "Importing..." with the periods repeating to communicate to the user the system was preforming properly.</p> 
+               </div>
+            </div>
+               <div class="row vertical-align gray-row">
+               <div class="col-xs-6">
+                   <p> Friendly error messages to the user.</p>  
+               </div>
+               <div class="col-xs-6">
+                   <p> When setting up an account certain fields need to match correctly.  In the database these fields are flags with Yes and No but the user only knows the terms.  When throwing errors on the page it displays the terms they know the fields as not the database.</p> 
+               </div>
+            </div>
+               <div class="row vertical-align">
+               <div class="col-xs-6 ">
+                   <p> Preventing importing files functionality from failing.</p>  
+               </div>
+               <div class="col-xs-6">
+                   <p> If the system has an issue when importing files and crashes, the user when have know idication what happened.  To prevent this I designed the page to catch every error they could encounter because of an incorrect file.  If an error is reached a useful message to the type of error is displayed on the screen.  </p> 
+               </div>
+            </div>
+          </div>
+    
 <br>
-In this application, functionality trumps appearance.  There is no bells or whistles on this app, just functionality.
+ <p><strong>BATCH: </strong>I also support batch apps, which the majority are for file minpulation and transfering.  Below is a process flow digram of a current batch process I put into place. 
 <br>
-There are two JavaScript improvements I have made.  The first is if a user make a certain change on a page we need to keep the change for historical purposes.  However, we wanted the users describe why the change occured.  To handle this, I created a popup box that allows the users to write a comment and then saves it back in our database.  The other JavaScript function is on an import page that displays to the user the page is importing the file with … repeating.
-</p>
+<strong>PROBLEM: </strong>A current file from an external vendor is processed through a server that is going to be retired.
+<br>
+ <strong>SOLUTION: </strong>I gathered the requierements from the user about the type of filtering the server was doing on the file.  From there I had to design the best way to get the file to into our system, knowing I would need to pull, filter, and load the file into our system.  After several different process flow digrams and discussions with the user the final process is reflected above.</p>   
+</div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
@@ -437,15 +475,20 @@ There are two JavaScript improvements I have made.  The first is if a user make 
                               <div id="bu7"> <img  src="img/portfolio/bbHome.png"/> </div>
                               <div id="bu8"> <img  src="img/portfolio/bbLose.png"/> </div>
                             </div>
-                            
-<p>This was my second mobile app I designed.  This application is simple, pop two matching color bubbles before too many bubble fill the screen.
+<div class="container paragraph">                            
+<p><strong>PROBLEM: </strong> Create an app that intreged users to continue to play.
+<br>    
+<strong>STEPS TO SOLUTION: </strong>
+This application was driven by the developer.  I started with talking to him about what was the mainfunctionality of the app.  It was simple, pop two matching color bubbles before too many bubble fill the screen. From there I started to come up with color combinations I thought would work for the app.  Between the developer and the QA testers we decided on final design.
 <br>
-My goal for this application was to keep the colors light like bubbles but not too much like the colors one might see around the Easter season.  I asked our testers to help me figure out what they liked to get the right colors.  It took many different iterations of fonts and colors to get to where it is today.
-<br>
-I also worked hard on making sure the bubbles moved at the right speed for the user.  If the bubbles moved too fast they touch would not be recognized by the program but if they moved too slow the user would not be challenged enough to continue to play.  It was important to make sure the touch recognition was just right or else a user would become frustrated.
-<br>
-Another feature I worked to improve was the collisions of the bubbles.  For the bubbles to collide correctly and look appealing to the user was important to me.  During development some balls would get stuck together and not move apart.  I worked the developer to come up with creative ideas to handle this functionality which is what is used in the game today.
-</p>
+<strong>SOLUTION: </strong> </p>
+    <ul>
+        <li><i>Responsive</i> - I wanted to make sure the bubbles moved at the right speed for the user.  If the bubbles moved too fast the user's touch would not be recognized by the program but if they moved too slow the user would not be challenged enough to continue to play.  It was important to make sure the touch recognition was just right or else a user would become frustrated./li>
+        <li><i>Minimalistic</i> - My goal for this application was to keep the colors light like bubbles but not too much like the colors one might see around the Easter season.  I asked our testers to help me figure out what they liked to get the right colors.  It took many different iterations of fonts and colors to get to where it is today.</li>
+        <li><i>Realistic</i> - For the bubbles to collide correctly and look appealing to the user was important to me.  During development some balls would get stuck together and not move apart.  I worked the developer to come up with creative ideas to handle this functionality which is what is used in the game today. </li>
+        </ul>
+
+</div>
                             <a href="https://itunes.apple.com/us/app/the-bubble-bounce/id901516357?ls=1&mt=8" target="_blank"> <img src="img/portfolio/appstore.png" height="70px"/></a>
                             <a href="https://play.google.com/store/apps/details?id=com.zurn.cc2dx.bouncingballs" target="_blank"> <img src="img/portfolio/google_play.png" height="60px"/></a>
                             <br>
@@ -480,12 +523,15 @@ Another feature I worked to improve was the collisions of the bubbles.  For the 
                               <div id="bu11"> <img  src="img/portfolio/bfQuestion.png"/> </div>
                             </div>
                             
-<p>The first mobile app I designed was for Bridgefront LLC.  The app allows users to take a HIPAA certified course and receive a certificate upon successful course completion.
+<div class="container paragraph">                            
+<p><strong>PROBLEM: </strong>Provide a moblile app allows a user to take a HIPAA certified course and receive a certificate upon successful course completion.
 <br>
-The importance of this app was the contents on the page. I wanted it to look similar to the online course, so I started there with font ideas.  From there little tweaks were made from the sizes on the different devices.
-<br>
-Another feature to this app is the bookmark capability.  Since the user is choosing to take this course on their iPhone or iPad, they are more likely to complete the course in multiple sessions.  The app allows the user to leave off where they started, or even navigate through the course hierarchy if they are looking for a specific chapter.
-</p>
+<strong>SOLUTION: </strong> </p>
+    <ul>
+        <li><i>Consistency</i> - The importance of this app was the contents on the page. I wanted it to look similar to the online course, so I started there with font ideas.  From there little tweaks were made from the sizes on the different devices./li>
+        <li><i>Capability</i> - I helped to design the bookmark capability feature.  Since the user is choosing to take this course on their iPhone or iPad, they are more likely to complete the course in multiple sessions.  The app allows the user to leave off where they started, or even navigate through the course hierarchy if they are looking for a specific chapter.</li>
+    </ul>
+</div>
                             <a href="https://itunes.apple.com/us/app/hipaa-privacy-security-training/id891507949?ls=1&mt=8" target="_blank"><img src="img/portfolio/appstore.png" height="70px"/></a>
                             <br>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
@@ -521,11 +567,16 @@ Another feature to this app is the bookmark capability.  Since the user is choos
                               <div id="bu16"> <img class="carosel-full-img" src="img/portfolio/resMix.png"> </div>
                             </div>
                             
-<p>While attending college I was a Residential Assistant which provided me many opportunities that I can leverage today, one of those areas being in marketing and deliverance.  Being a graduate in mathematics, there was not a whole lot of need for a beautiful and intuitive end product.  Through my position as an RA though, I learned the importance of marketing towards your audience, and delivering something that was friendly for everyone.
+<div class="container paragraph">                        
+<p><strong>PROBLEM: </strong> Have residents attend programs.
 <br>
-Throughout the course of being an RA I learned two key things to effectively engaging with college students. The first, free food, and the second was having an eye catching flyer.  The more interesting, creative, and welcoming I made the flyers the more participants would come.
-<br>
-My goal with the flyers was to also revel the what, when, and where while also adding a hint of creative design, as it was important for the information to get across to my residents but if I sent an email with fun and crafty graphics rather than in plain text, more would remember and show up.</p>
+<strong>SOLUTION: </strong> </p>
+    <ul>
+        <li><i>Captivating</i> - The more interesting, creative, and welcoming I made the flyers the more participants would come.</li>
+        <li><i>Insentive</i> - Throughout the course of being an RA I learned two key things to effectively engaging with college students.  One being make sure to have free food.</li>
+        <li><i>Fast Recognition</i> - The flyers would revel the what, when, and where while also adding a hint of creative design, as it was important for the information to get across to my residents quickly and efficently.</li>
+    </ul>
+ </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
@@ -558,10 +609,15 @@ My goal with the flyers was to also revel the what, when, and where while also a
                               <div id="bu20"> <img class="carosel-full-img" src="img/portfolio/findPathQuestion.png"/></div>
                               <div id="bu21"> <img class="carosel-full-img" src="img/portfolio/findPathPick.png"/></div>
                             </div>
-                            
-<p>During my senior year of college I created my first UI.  Now looking back on it, I am proud of what I accomplished with the knowledge I knew then.
-<br>The objective of the assignment was to demonstrate different technegious of Python we learned during the semester.  It was intended to be a simple project and no UI was needed but being creative I went for it.  I began to learn Tkinter, the UI library interface to Python, and was able to create this very simple UI. <br>
-My UI was able to accomplish the objectives of the project and at the same time opened a door to UI development and design.</p>
+<div class="container paragraph">
+<p><strong>PROBLEM: </strong> During my senior year of college I created my first UI for a final assignment. The objective of the assignment was to demonstrate different technegious of Python we learned during the semester.
+<br>
+<strong>SOLUTION: </strong> </p>
+    <ul>
+        <li><i>Creativity</i> - TIt was intended to be a simple project and no UI was needed but being creative I went for it.  I began to learn Tkinter, the UI library interface to Python, and was able to create this very simple UI.</li>
+        <li><i>Clear</i> - Since the nature of the app was simple, it was easy for the user to navigate through.  </li>
+    </ul>
+</div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>

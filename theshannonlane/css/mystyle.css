@@ -260,18 +260,46 @@
 .portfolio-modal .modal-content .paragraph img{
     border: 1.5px solid #666666;
     margin-bottom: 0px;
-    
-    
+}
+
+.portfolio-modal .paragraph .row h2 {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 0;
 }
 
 .portfolio-modal .paragraph .row p {
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 0;
- 
 }
+
+.gray-row {
+    background-color: #f1f1f1;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+  display: flex;
+  align-items: center;     /* Align the flex-items vertically */
+  justify-content: center; /* Optional, to align inner flex-items 
+                              horizontally within the column  */
+}
+
 .portfolio-modal .paragraph p {
     text-align: left;
     line-height: 1.5;
 }
 
+.paragraph {
+    width: auto;
+}
+
+.table-with-border {
+    border: 1.5px solid #666666;
+}

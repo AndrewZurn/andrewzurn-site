@@ -80,7 +80,7 @@ img {
     background-size: cover;
 }
 
-@media(max-width: 767px) {
+@media(max-width: 968px) {
     .downloads-section h3 {
         margin-top: 19px;
     }

@@ -92,12 +92,13 @@ img {
 
 @media(max-width:767px) {
     .extra-padding-bottom {
-        padding-bottom: 20px;
+        padding-bottom: 5px;
     }
 	
 	  .footer-column {
         margin-right: 17px;
         margin-left: 17px;
+        margin-bottom: 20px;
     }
 }
 

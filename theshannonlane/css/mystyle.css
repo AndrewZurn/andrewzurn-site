@@ -230,6 +230,10 @@
     .wrapper_bu {
         display: none;
     }
+    
+    #hideImage {
+        display: none;
+    }
 }
 
 @media(min-width:768px) {

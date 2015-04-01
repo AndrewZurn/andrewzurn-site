@@ -40,12 +40,20 @@ img {
     width: 100%;
     padding: 25px 0 30px;
     color: #fff;
-    background-color: #4f73bf;
+    /*background-color: #4f73bf;*/
     /* background: url(../img/gray_background.jpg) no-repeat center center scroll; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    background: #93cede;
+    background: -moz-radial-gradient(center, ellipse cover, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #93cede), color-stop(41%, #75bdd1), color-stop(100%, #49a5bf));
+    background: -webkit-radial-gradient(center, ellipse cover, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+    background: -o-radial-gradient(center, ellipse cover, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+    background: radial-gradient(ellipse at center, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1 );
 }
 
 #about .container {
@@ -71,11 +79,14 @@ img {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background-color: #5092ce;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: #93cede;
+    background: -moz-radial-gradient(center, ellipse cover, #93cede 0%, #75bdd1 43%, #5092ce 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #93cede), color-stop(43%, #75bdd1), color-stop(100%, #5092ce));
+    background: -webkit-radial-gradient(center, ellipse cover, #93cede 0%, #75bdd1 43%, #5092ce 100%);
+    background: -o-radial-gradient(center, ellipse cover, #93cede 0%, #75bdd1 43%, #5092ce 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #93cede 0%, #75bdd1 43%, #5092ce 100%);
+    background: radial-gradient(ellipse at center, #93cede 0%, #75bdd1 43%, #5092ce 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#5092ce', GradientType=1 );
 }
 
 @media(max-width: 968px) {

@@ -159,3 +159,12 @@ footer {
 #feedContainer h6 {
     margin: 0 0 6px 0;
 }
+
+.gray-btn {
+    border: 1px solid #444444;
+    color: #444444;
+}
+
+#about a {
+    color: #888888;
+}

@@ -1,0 +1,24 @@
+Joining Objects In Scala’s Slick
+
+This is going to just be a quick post, mainly to help me in the future as it was a problem that had me stumped for a while, and hopefully to help other’s that run into the problem as well.
+
+I’ve been playing around with Scala and Slick lately, and ran into a situation where I wanted to join two objects. I needed to join a Product and also a Category, into an associated/combined object (needed for serialization into JSON for a RESTful api). The association between these is that a Product has a single Category, and a Category can have many Products (a 1-N relationship, but I’m interested in the information as it stands to a Product, thus ProductCategory is my join object).
+
+Here was my solution that allowed me to iterate over all the products in my database, join them with their category where the foreign key in the product matched the primary key for category.
+
+  def list: List[ProductCategory] = db.withSession { implicit session =>
+    val categories = TableQuery[Categories]
+
+    val query = for {
+      (product, category) <- products join categories on (_.categoryId === _.id)
+    } yield (product, category)
+
+    query.list map Function.tupled((p, c) => ProductCategory(p, c))
+  }
+I then would run the list command on my query object (which would make the call to the database and execute my query that was created in the for comprehension). The object I got in return was a List[(Product,Category], which I wanted to map over, and use the value in the tuple to populate the ProductCategory.
+
+The helper function Function.tupled helped the Scala compiler to infer the types. From there it was run the application, make the REST call, and see the magic at work.
+
+product_category_output
+
+Cheerio!

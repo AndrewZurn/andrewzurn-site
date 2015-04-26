@@ -1,0 +1,218 @@
+Creating Lookup/Link Tables Between Two Entities With Slick
+
+I’ve recently been playing around with Scala, along with the defacto ORM that most Scalalites use when working with relational databases, Slick. Not long into my tinkering, I ran into an issue when trying to create entities that hold a many-to-many relationships. As it seems there is a lack of documentation and helpful resources on how to create this many-to-many relationship in Slick, below is the solution that I achieved.
+
+Here is a simple ERD (Data Model) for a Patient and Diagnosis entities.
+
+ERD for Patient to Diagnosis relationship
+ERD for Patient to Diagnosis relationship
+
+Basically, a Patient can have many Diagnosis’, and a Diagnosis can be linked to many Patients. So to do this, the most logical approach would be to create a lookup or linking table (a brief explanation of a lookup table can be found here).
+
+Here is what our logical model should look like given our above ERD.
+
+Logical Model for Patient Diagnosis relationship
+Logical Model for Patient to Diagnosis relationship
+
+What this allows us to do, basically, is allow a given patient (row in Patient), any number of Diagnosis (row in Diagnosis), and vice versa (we can look up, for a given diagnosis, what patient have them).
+
+Onto the code!  How do we model this in Slick?  Well, here is what I was able to come up with.  It should all be pretty straight forward, a basic model, a class needed to create our database table.
+
+Patients.scala
+
+package models
+
+import play.api.Play.current
+
+import scala.slick.driver.PostgresDriver.simple._
+
+// Create our Model class
+case class Patient(id: Option[Int] = None, firstName: String,
+                    lastName: String, middleInitial: String)
+
+// Create our Database Table Entity
+class Patients(tag: Tag) extends Table[Patient](tag, "PATIENTS") {
+  def id = column[Int]("PATIENT_ID", O.PrimaryKey, O.AutoInc)
+
+  def firstName = column[String]("FIRST_NAME", O.NotNull)
+
+  def lastName = column[String]("LAST_NAME", O.NotNull)
+
+  def middleInitial = column[String]("MIDDLE_INITIAL", O.NotNull)
+
+  def * = (id.?, firstName, lastName, middleInitial) &lt;&gt; (Patient.tupled, Patient.unapply)
+}
+
+// Create a singleton object that extends our 
+// database table with some helpful methods
+object Patients extends TableQuery(new Patients(_)) {
+  val db = play.api.db.slick.DB
+  val patients = TableQuery[Patients]
+
+  def all: List[Patient] = db.withSession { implicit session =&gt;
+    patients.sortBy(_.id.asc.nullsFirst).list
+  }
+
+  def create(newPatient: Patient) = db.withTransaction { implicit session =&gt;
+    patients += newPatient
+  }
+
+  def find(patientId: Int): Patient = db.withSession { implicit session =&gt;
+    patients.filter(_.id === patientId).first
+  }
+
+  def update(updatePatient: Patient) = db.withTransaction { implicit session =&gt;
+    patients.filter(_.id === updatePatient.id).update(updatePatient)
+  }
+
+  def delete(id: Int) = db.withTransaction { implicit session =&gt;
+    patients.filter(_.id === id).delete
+  }
+
+  def getDiagnoses(patientId: Int): List[Diagnosis] = db.withSession { implicit session =&gt;
+    val diagnosisIds = PatientsDiagnoses.findByPatientId(patientId)
+                                  .map(_.diagnosisId)
+    Diagnoses.all.filter(d =&gt; diagnosisIds.contains(d.id))
+  }
+}
+Diagnoses.scala
+
+package models
+import play.api.Play.current
+
+import scala.slick.driver.PostgresDriver.simple._
+
+// Create our Model class
+case class Diagnosis(id: Option[Int] = None, name: String, 
+                     symptoms: String)
+
+
+// Create our Database Table Entity
+class Diagnoses(tag: Tag) extends Table[Diagnosis](tag, "DIAGNOSES") {
+  def id = column[Int]("DIAGNOSIS_ID", O.PrimaryKey, O.AutoInc)
+
+  def name = column[String]("DIAGNOSIS_NAME", O.NotNull)
+
+  def symptoms = column[String]("SYMPTOMS", O.NotNull)
+
+  def idx = index("idx_name", name, unique = true)
+
+  def * = (id.?, name, symptoms) &lt;&gt; (Diagnosis.tupled, Diagnosis.unapply)
+}
+
+// Create a singleton object that extends our
+// database table with some helpful methods
+object Diagnoses extends TableQuery(new Diagnoses(_)) {
+  val db = play.api.db.slick.DB
+  val diagnoses = TableQuery[Diagnoses]
+
+  def all: List[Diagnosis] = db.withSession { implicit session =&gt;
+    diagnoses.sortBy(_.id.asc.nullsFirst).list
+  }
+
+  def allByDiagnosisId(id: Int): List[Diagnosis] = db.withSession { implicit session =&gt;
+    diagnoses.filter(_.id === id).list
+  }
+
+  def create(newDiagnosis: Diagnosis) = db.withTransaction { implicit session =&gt;
+    diagnoses += newDiagnosis
+  }
+
+  def find(diagnosisId: Int): Diagnosis = db.withSession { implicit session =&gt;
+    diagnoses.filter(_.id === diagnosisId).first
+  }
+
+  def update(updateDiagnosis: Diagnosis) = db.withTransaction { implicit session =&gt;
+    diagnoses.filter(_.id === updateDiagnosis.id).update(updateDiagnosis)
+  }
+
+  def delete(id: Int) = db.withTransaction { implicit session =&gt;
+    diagnoses.filter(_.id === id).delete
+  }
+}
+And finally, our lookup or linking table between the two entities.
+
+PatientsDiagnoses.scala
+
+package models
+
+import play.api.Play.current
+
+import scala.slick.driver.PostgresDriver.simple._
+
+// Create our model class
+case class PatientDiagnosis(id: Option[Int] = None,
+                            patientId: Option[Int] = None,
+                            diagnosisId: Option[Int] = None)
+
+// Create our database table entity, with a shared index (insures uniqueness)
+// of our two foreign keys to Patient and Diagnosis
+class PatientsDiagnoses(tag: Tag) extends Table[PatientDiagnosis](tag, "PATIENTS_DIAGNOSES") {
+  def id = column[Int]("PATIENTS_DIAGNOSES_ID", O.PrimaryKey, O.AutoInc)
+
+  def patientId = column[Int]("PATIENT_ID", O.NotNull)
+
+  def diagnosisId = column[Int]("DIAGNOSIS_ID", O.NotNull)
+
+  def idx = index("PATIENTS_DIAGNOSIS_ID_INDEX", (patientId, diagnosisId), unique = true)
+
+  def patientFK = foreignKey("PATIENT_ID_FK", patientId, Patients)(p =&gt; p.id)
+
+  def diagnosisFK = foreignKey("DIAGNOSIS_ID_FK", diagnosisId, Diagnoses)(d =&gt; d.id)
+
+  def * = (id.?, patientId.?, diagnosisId.?) &lt;&gt; (PatientDiagnosis.tupled, PatientDiagnosis.unapply)
+}
+
+// Create an singleton object that exposes helpful methods for
+// working with the database.
+object PatientsDiagnoses extends TableQuery(new PatientsDiagnoses(_)) {
+  val db = play.api.db.slick.DB
+  var patientsDiagnoses = TableQuery[PatientsDiagnoses]
+
+  def all: List[PatientDiagnosis] = db.withSession { implicit session =&gt;
+    patientsDiagnoses.sortBy(_.patientId.asc.nullsFirst).list
+  }
+
+  def create(newPatientDiagnosis: PatientDiagnosis) = db.withTransaction { implicit session =&gt;
+    patientsDiagnoses += newPatientDiagnosis
+  }
+
+  def find(patientDiagnosis: PatientDiagnosis): List[PatientDiagnosis] = db.withTransaction { implicit session =&gt;
+    patientsDiagnoses
+      .filter(_.patientId === patientDiagnosis.patientId)
+      .filter(_.diagnosisId === patientDiagnosis.diagnosisId)
+      .list
+  } 
+
+  def findByPatientId(patientId: Int): List[PatientDiagnosis] = db.withSession { implicit session =&gt;
+    patientsDiagnoses
+      .filter(_.patientId === patientId)
+      .sortBy(_.patientId.asc.nullsFirst).list
+  }
+
+  def findByDiagnosisId(diagnosisId: Int): List[PatientDiagnosis] = db.withSession { implicit session =&gt;
+    patientsDiagnoses
+      .filter(_.diagnosisId === diagnosisId)
+      .sortBy(_.diagnosisId.asc.nullsFirst).list
+  }
+
+  def update(patientDiagnosis: PatientDiagnosis) = db.withTransaction { implicit session =&gt;
+    patientsDiagnoses
+      .filter(_.patientId === patientDiagnosis.patientId)
+      .filter(_.diagnosisId === patientDiagnosis.diagnosisId)
+      .update(patientDiagnosis)
+  }
+
+  def delete(patientDiagnosis: PatientDiagnosis) = db.withTransaction { implicit session =&gt;
+    patientsDiagnoses
+      .filter(_.patientId === patientDiagnosis.patientId)
+      .filter(_.diagnosisId === patientDiagnosis.diagnosisId)
+      .delete
+  }
+}
+So there we have it, two entities, a Patient class, and a Diagnosis class, that share a lookup table.
+
+Lookup Table between Patients and Diagnoses
+Lookup Table between Patients and Diagnoses
+
+Happy Coding!

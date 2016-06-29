@@ -1,0 +1,126 @@
+/*
+Theme Name: smallblog
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+body {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+#page {
+    float: right;
+}
+
+#sidebar {
+    float: left;
+}
+
+.the-headline:before, .the-headline:after {
+    left: inherit;
+    right: 0;
+}
+
+.widget .widget-header:before, .widget .widget-header:after {
+    left: inherit;
+    right: 0;
+}
+
+.list-unstyled, .widget-list-ul > ul, .widget > ul, #header #menu > ul > li .sub-menu, #navigation nav ul {
+    padding-right: 0;
+}
+
+.widget-list-ul ul > li:before, .widget ul > li {
+    position: relative;
+    padding-right: 15px !important;
+}
+
+.widget-list-ul ul > li:before, .widget ul > li:before {
+    left: inherit;
+    right: 0;
+    top: 12px;
+    height: 15px;
+    width: 15px;
+    position: absolute !important;
+    content: 'e' !important;
+}
+
+.widget-list-ul ul > li:hover:before, .widget ul > li:hover:before {
+    left: inherit;
+    right: 3px;
+}
+
+.widget-list-ul ul li .children, .widget ul li .children {
+    margin-left: 0;
+    padding: 0;
+}
+
+.widget_nav_menu .menu-item-has-children .sub-menu > li {
+    padding-right: 8px !important;
+}
+
+.widget_nav_menu .menu-item-has-children .sub-menu {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.widget_nav_menu .menu-item-has-children .sub-menu > li:before {
+    margin-right: 0;
+    left: inherit;
+    right: 0;
+    top: 10px;
+}
+
+#comments .comments-area:after {
+    left: inherit;
+    right: 38px;
+}
+
+#comments .comment-list li {
+    padding-left: 0;
+    padding-right: 80px;
+}
+
+#comments .comments-area .the-subtitle {
+    margin: 0 15px 0 0;
+    padding-left: 0;
+    padding-right: 60px;
+}
+
+#comments .comment-list li .comment-body {
+    margin: 30px 15px 30px 0;
+}
+
+#comments .comment-list li .comment-body .comment-figure {
+    left: inherit;
+    right: 0;
+}
+
+#comments #respond .comment-reply-title {
+    margin-left: 0;
+    margin-right: 15px;
+    padding-left: 0;
+    padding-right: 60px;
+}
+
+#comments #respond .comment-reply-title small:before {
+    margin-right: 0;
+    margin-left: 10px;
+    left: inherit;
+    right: 0;
+}
+
+#navigation nav ul li.menu-item-has-children>a:first-child {
+    padding-right: 10px;
+    padding-left: 50px;
+}
+
+.off-canvas .off-canvas-headline .icon-close, #navigation nav ul li.menu-item-has-children>a:first-child [class^="icon-"], #navigation nav ul li.menu-item-has-children>a:first-child [class*=" icon-"] {
+    right: inherit;
+    left: 0;
+}

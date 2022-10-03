@@ -19,3 +19,5 @@ hugo.linux
 /.hugo_build.lock
 
 # End of https://www.toptal.com/developers/gitignore/api/hugo
+/andrewzurn.com-docker/public-html/blog
+/andrewzurn.com-docker/blog/public

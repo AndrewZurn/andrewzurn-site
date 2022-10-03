@@ -1,4 +1,4 @@
-baseurl = "https://zurn.dev"
+baseurl = "https://zurn.dev/blog"
 DefaultContentLanguage = "en"
 title = "Andrew Zurn"
 theme = "beautifulhugo"

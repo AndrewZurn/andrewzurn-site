@@ -1,6 +1,6 @@
 ---
 title: "Blog Ideas"
-date: 2022-10-01T00:14:30-07:00
+date: 2023-07-03T13:02:18-07:00
 draft: false
 ---
 # Some random blog ideas

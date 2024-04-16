@@ -5,5 +5,8 @@ draft: false
 ---
 # Some random blog ideas
 
-* Testcontainers for integration-based testing of services
+* Testcontainers for contract-based testing of services
 * HttpBin + TestContainers for HTTP-based unit testing
+* Spring Boot + Graal + Datadog Java Agent
+* Spring Boot + Graal + Micrometer + OTEL
+* Spring Boot + Kotlin + HAPI FHIR for EHR Integrations

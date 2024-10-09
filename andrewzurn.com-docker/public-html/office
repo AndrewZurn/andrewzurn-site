@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirect to Outlook Book with Me</title>
+  <script>
+    function redirect() {
+      window.location.href = "https://outlook.office.com/bookwithme/user/53f84e0e5b0444d9b69b0f9f8860a19a@dexcom.com/meetingtype/GGFBuCGyVE64se-AtjaxoQ2?anonymous";
+    }
+  </script>
+</head>
+<body onload="redirect()">
+  <h1>Redirecting...</h1>
+</body>
+</html>

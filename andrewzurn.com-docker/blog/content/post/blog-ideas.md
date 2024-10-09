@@ -10,3 +10,5 @@ draft: false
 * Spring Boot + Graal + Datadog Java Agent
 * Spring Boot + Graal + Micrometer + OTEL
 * Spring Boot + Kotlin + HAPI FHIR for EHR Integrations
+* Spring Boot + Spring Data Spanner + Spring Data JDBC (BigQuery) for Data Source Abstraction
+* VisualVM + K8s for JVM Profiling

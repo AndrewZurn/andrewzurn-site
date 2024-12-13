@@ -99,7 +99,7 @@ various GCP projects or GitHub repos, something like this:
 
 Now that we have our GoLinks configured, we have to make some changes to our machine to help support our wanted functionality.
 
-## Configuring Your Machine's Host Resolution 'go/'
+## Configuring Your Machine's Host Resolution for 'go/'
 
 One final step to get this working properly is by updating your `/etc/hosts` file to allow your machine 
 to resolve the `go/` domain to your local machine (where your NodeJS app will soon be running). You'll 

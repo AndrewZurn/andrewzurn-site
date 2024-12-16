@@ -1,5 +1,5 @@
 ---
-title: "Golinks"
+title: "GoLinks"
 date: 2024-12-12T19:39:41-08:00
 draft: false
 ---
@@ -183,6 +183,14 @@ pm2 save
 ```
 
 And that's it - you now have a nifty (and persistant) GoLinks serving application that you can show off to your friends. Have fun!
+
+## Where to Go Next?
+
+Some thoughts on taking this a bit further than just a local machine:
+
+* Cloud Deployment (update your /etc/hosts to point to a remove IP/public URL).
+* Make a nice little UI and backend/DB that updates and stores the links.
+* Local Network access (throw it on a Raspberry Pi so your whole household can access it).
 
 ## Links
 

@@ -1,0 +1,94 @@
+baseurl: https://zurn.dev/blog
+DefaultContentLanguage: en
+title: Andrew Zurn
+theme: PaperMod
+paginate: 5
+enableRobotsTXT: true
+buildDrafts: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+  pygmentsStyle: trac
+  pygmentsUseClasses: true
+  pygmentsCodeFences: true
+  pygmentsCodefencesGuessSyntax: true
+
+params:
+  title: Hi, I'm Andrew
+  author: Andrew Zurn
+  mainSections:
+    - post
+    - posts
+  favicon: img/favicon.ico
+  dateFormat: January 2, 2006
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: false
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  profileMode:
+    enabled: false # needs to be explicitly set
+
+  homeInfoParams:
+    Title: "Hi, I'm Andrew"
+    Content: Developer, Teacher, Learner
+
+  socialIcons:
+    - name: x
+      url: "https://x.com/AndrewZurn"
+    - name: bluesky
+      url: "https://bsky.app/profile/andrewzurn.bsky.social"
+    - name: github
+      url: "https://github.com/AndrewZurn"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/awzurn"
+    - name: strava
+      url: "https://www.strava.com/athletes/32967328"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+  editPost:
+    URL: "https://github.com/<path_to_repo>/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - name: Home
+      url: https://zurn.dev
+      weight: 1
+    - name: Blog
+      url: ""
+      weight: 2
+
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
